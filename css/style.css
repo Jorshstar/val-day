@@ -47,11 +47,12 @@ body {
 .flowers {
   position: relative;
   transform: scale(0.9);
+  margin-bottom: 15vh; /* Add margin to raise flowers */
 }
 
 .flower {
   position: absolute;
-  bottom: 10vmin;
+  bottom: 20vmin; /* Increased from 10vmin */
   transform-origin: bottom center;
   z-index: 10;
   --fl-speed: 0.8s;
@@ -1222,6 +1223,46 @@ body {
 
 .not-loaded * {
   animation-play-state: paused !important;
+}
+
+/* Ensure music control stays visible */
+.music-control {
+  position: fixed;
+  bottom: 5vh; /* Changed from 20px */
+  right: 5vw; /* Changed from 20px */
+  z-index: 1000;
+  background: rgba(255, 51, 102, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Add mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  .flowers {
+    margin-bottom: 25vh; /* More margin on mobile */
+    transform: scale(0.7); /* Slightly smaller on mobile */
+  }
+
+  .flower {
+    bottom: 30vmin; /* Higher position on mobile */
+  }
+
+  .music-control {
+    bottom: 3vh; /* Even higher on mobile */
+    right: 3vw;
+    width: 40px; /* Slightly smaller button */
+    height: 40px;
+  }
+
+  .title {
+    margin-top: 20px; /* Adjust title position */
+    font-size: 40px; /* Smaller font on mobile */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
